@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Basic Forensic Report</title>
+
+<style>
+
+body{
+    font-family:Arial,sans-serif;
+    margin:40px;
+    color:#222;
+}
+
+h1{
+    text-align:center;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+}
+
+table,th,td{
+    border:1px solid black;
+}
+
+th,td{
+    padding:8px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Basic Forensic Investigation Report</h1>
+
+<h2>Case Information</h2>
+
+<table>
+
+<tr><th>Case Name</th><td>{{ case_name }}</td></tr>
+<tr><th>Case Number</th><td>{{ case_number }}</td></tr>
+<tr><th>Examiner</th><td>{{ examiner }}</td></tr>
+<tr><th>Organization</th><td>{{ organization }}</td></tr>
+<tr><th>Report Date</th><td>{{ report_date }}</td></tr>
+
+</table>
+
+<h2>Executive Summary</h2>
+
+<p>{{ executive_summary }}</p>
+
+<h2>Methodology</h2>
+
+<p>{{ methodology }}</p>
+
+<h2>Findings</h2>
+
+<ul>
+
+{% for finding in findings %}
+
+<li>{{ finding }}</li>
+
+{% endfor %}
+
+</ul>
+
+</body>
+
+</html>

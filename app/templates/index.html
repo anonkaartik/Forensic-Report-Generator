@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Forensic Report Generator</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="container hero-content">
+
+<div class="hero-left">
+
+<div class="logo">
+<i class="fa-solid fa-shield-halved"></i>
+</div>
+
+<h1>Forensic Report Generator</h1>
+
+<p>
+Generate court-admissible forensic investigation reports with
+digital signatures and multi-format export.
+</p>
+
+<div class="badges">
+
+<div class="badge">
+<i class="fa-solid fa-gavel"></i>
+ Court Admissible
+</div>
+
+<div class="badge">
+<i class="fa-solid fa-key"></i>
+ RSA Digital Signature
+</div>
+
+<div class="badge">
+<i class="fa-solid fa-file-pdf"></i>
+ PDF • HTML • DOCX
+</div>
+
+<div class="badge">
+<i class="fa-solid fa-link"></i>
+ Chain of Custody
+</div>
+
+</div>
+
+</div>
+
+<div class="hero-right">
+
+<i class="fa-solid fa-fingerprint hero-icon"></i>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- MAIN -->
+
+<section class="main">
+
+<div class="container">
+
+<div class="grid">
+
+<!-- LEFT CARD -->
+
+<div class="card">
+
+<h2>
+
+<i class="fa-solid fa-upload"></i>
+
+Upload Evidence File
+
+</h2>
+
+<p class="subtitle">
+
+Upload JSON or CSV forensic data to generate reports.
+
+</p>
+
+<form
+action="/generate"
+method="POST"
+enctype="multipart/form-data">
+
+<div class="upload-box">
+
+<i class="fa-solid fa-cloud-arrow-up"></i>
+
+<h3>Drag & Drop File</h3>
+
+<p>
+
+or click below to browse
+
+</p>
+
+<input
+type="file"
+name="file"
+id="fileInput"
+required>
+
+<br><br>
+
+<button
+type="submit"
+class="primary-btn">
+
+Generate Report
+
+</button>
+
+</div>
+
+</form>
+
+</div>
+
+<!-- RIGHT -->
+
+<div>
+
+<div class="card side-card">
+
+<h2>
+
+Why Use This Tool?
+
+</h2>
+
+<div class="feature">
+
+<i class="fa-solid fa-file-circle-check"></i>
+
+<div>
+
+<h4>Professional Reports</h4>
+
+<p>
+
+Structured forensic reports based on
+industry standards.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="feature">
+
+<i class="fa-solid fa-lock"></i>
+
+<div>
+
+<h4>Digital Signatures</h4>
+
+<p>
+
+RSA SHA-256 signatures for authenticity.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="feature">
+
+<i class="fa-solid fa-file-export"></i>
+
+<div>
+
+<h4>Multiple Formats</h4>
+
+<p>
+
+Generate PDF, HTML and DOCX reports.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="feature">
+
+<i class="fa-solid fa-network-wired"></i>
+
+<div>
+
+<h4>Chain of Custody</h4>
+
+<p>
+
+Maintain complete evidence integrity.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="card workflow">
+
+<h2>
+
+Workflow
+
+</h2>
+
+<div class="steps">
+
+<div>
+
+<div class="circle">
+
+1
+
+</div>
+
+<p>Upload</p>
+
+</div>
+
+<div>
+
+<div class="circle">
+
+2
+
+</div>
+
+<p>Process</p>
+
+</div>
+
+<div>
+
+<div class="circle">
+
+3
+
+</div>
+
+<p>Generate</p>
+
+</div>
+
+<div>
+
+<div class="circle">
+
+4
+
+</div>
+
+<p>Download</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+© 2026 Forensic Report Generator
+
+</footer>
+
+</body>
+
+</html>

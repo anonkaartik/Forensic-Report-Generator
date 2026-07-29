@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Detailed Forensic Report</title>
+
+<style>
+
+body{
+    font-family:Calibri,sans-serif;
+    margin:35px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-bottom:20px;
+}
+
+table,th,td{
+    border:1px solid #000;
+}
+
+th{
+    background:#dddddd;
+}
+
+th,td{
+    padding:8px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Detailed Forensic Investigation Report</h1>
+
+<h2>Case Details</h2>
+
+<table>
+
+<tr>
+
+<th>Case Name</th>
+<th>Case Number</th>
+<th>Examiner</th>
+
+</tr>
+
+<tr>
+
+<td>{{ case_name }}</td>
+<td>{{ case_number }}</td>
+<td>{{ examiner }}</td>
+
+</tr>
+
+</table>
+
+<h2>Executive Summary</h2>
+
+<p>{{ executive_summary }}</p>
+
+<h2>Methodology</h2>
+
+<p>{{ methodology }}</p>
+
+<h2>Tool Versions</h2>
+
+<table>
+
+<tr>
+
+<th>Tool</th>
+<th>Version</th>
+
+</tr>
+
+{% for tool in tool_versions %}
+
+<tr>
+
+<td>{{ tool.tool_name }}</td>
+<td>{{ tool.version }}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+<h2>Hash Log</h2>
+
+<table>
+
+<tr>
+
+<th>File</th>
+<th>Algorithm</th>
+<th>Hash</th>
+
+</tr>
+
+{% for item in hash_log %}
+
+<tr>
+
+<td>{{ item.file_name }}</td>
+<td>{{ item.algorithm }}</td>
+<td>{{ item.hash_value }}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</body>
+
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Court Admissible Report</title>
+
+<style>
+
+body{
+    font-family:"Times New Roman",serif;
+    margin:45px;
+}
+
+h1{
+    text-align:center;
+}
+
+section{
+    margin-bottom:25px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Court Admissible Digital Forensic Report</h1>
+
+<section>
+
+<h2>Case Information</h2>
+
+<p><strong>Case Name:</strong> {{ case_name }}</p>
+
+<p><strong>Case Number:</strong> {{ case_number }}</p>
+
+<p><strong>Examiner:</strong> {{ examiner }}</p>
+
+<p><strong>Organization:</strong> {{ organization }}</p>
+
+<p><strong>Date:</strong> {{ report_date }}</p>
+
+</section>
+
+<section>
+
+<h2>Executive Summary</h2>
+
+<p>{{ executive_summary }}</p>
+
+</section>
+
+<section>
+
+<h2>Methodology</h2>
+
+<p>{{ methodology }}</p>
+
+</section>
+
+<section>
+
+<h2>Chain of Custody</h2>
+
+{% for item in chain_of_custody %}
+
+<p>
+
+Evidence ID:
+{{ item.evidence_id }}
+
+<br>
+
+Collected By:
+{{ item.collected_by }}
+
+<br>
+
+Transferred To:
+{{ item.transferred_to }}
+
+</p>
+
+<hr>
+
+{% endfor %}
+
+</section>
+
+<section>
+
+<h2>Evidence Appendix</h2>
+
+{% for item in evidence_appendix %}
+
+<p>
+
+{{ item.file_name }}
+
+-
+
+{{ item.file_type }}
+
+</p>
+
+{% endfor %}
+
+</section>
+
+</body>
+
+</html>
