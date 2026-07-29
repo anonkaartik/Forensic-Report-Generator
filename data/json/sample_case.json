@@ -1,0 +1,51 @@
+{
+    "case_name": "USB Investigation",
+    "case_number": "CASE-1001",
+    "examiner": "Kaartik",
+    "organization": "Internship Project",
+    "report_date": "29-07-2026",
+    "executive_summary": "USB device examined successfully.",
+    "methodology": "Evidence collected following ISO/IEC 27037.",
+
+    "findings": [
+        "Recovered deleted files.",
+        "Suspicious executable found."
+    ],
+
+    "tool_versions": [
+        {
+            "tool_name": "Autopsy",
+            "version": "4.21"
+        }
+    ],
+
+    "hash_log": [
+        {
+            "file_name": "usb.img",
+            "algorithm": "SHA256",
+            "hash_value": "ABC123XYZ"
+        }
+    ],
+
+    "chain_of_custody": [
+        {
+            "evidence_id": "EV-1001",
+            "collected_by": "Kaartik",
+            "collection_date": "29-07-2026",
+            "transferred_to": "Digital Forensics Lab",
+            "transfer_date": "29-07-2026"
+        }
+    ],
+
+    "evidence_appendix": [
+        {
+            "file_name": "usb.img",
+            "file_type": "Disk Image",
+            "hash_value": "ABC123XYZ",
+            "metadata": {
+                "Size": "16 GB",
+                "Format": "E01"
+            }
+        }
+    ]
+}
