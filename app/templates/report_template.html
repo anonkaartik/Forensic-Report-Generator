@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Forensic Report</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            margin:40px;
+            color:#222;
+        }
+
+        h1,h2{
+            border-bottom:2px solid black;
+            padding-bottom:5px;
+        }
+
+        table{
+            width:100%;
+            border-collapse:collapse;
+            margin-bottom:20px;
+        }
+
+        table,th,td{
+            border:1px solid black;
+        }
+
+        th,td{
+            padding:8px;
+            text-align:left;
+        }
+
+        ul{
+            margin-left:20px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<h1>Digital Forensic Investigation Report</h1>
+
+<h2>Case Information</h2>
+
+<p><strong>Case Name:</strong> {{ case_name }}</p>
+<p><strong>Case Number:</strong> {{ case_number }}</p>
+<p><strong>Examiner:</strong> {{ examiner }}</p>
+<p><strong>Organization:</strong> {{ organization }}</p>
+<p><strong>Report Date:</strong> {{ report_date }}</p>
+
+<h2>Executive Summary</h2>
+
+<p>{{ executive_summary }}</p>
+
+<h2>Methodology</h2>
+
+<p>{{ methodology }}</p>
+
+<h2>Findings</h2>
+
+<ul>
+{% for finding in findings %}
+<li>{{ finding }}</li>
+{% endfor %}
+</ul>
+
+<h2>Tool Versions</h2>
+
+<table>
+
+<tr>
+<th>Tool</th>
+<th>Version</th>
+</tr>
+
+{% for tool in tool_versions %}
+
+<tr>
+<td>{{ tool.tool_name }}</td>
+<td>{{ tool.version }}</td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+<h2>Hash Log</h2>
+
+<table>
+
+<tr>
+<th>File</th>
+<th>Algorithm</th>
+<th>Hash</th>
+</tr>
+
+{% for item in hash_log %}
+
+<tr>
+<td>{{ item.file_name }}</td>
+<td>{{ item.algorithm }}</td>
+<td>{{ item.hash_value }}</td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+<h2>Chain of Custody</h2>
+
+<table>
+
+<tr>
+<th>Evidence ID</th>
+<th>Collected By</th>
+<th>Collection Date</th>
+<th>Transferred To</th>
+<th>Transfer Date</th>
+</tr>
+
+{% for item in chain_of_custody %}
+
+<tr>
+<td>{{ item.evidence_id }}</td>
+<td>{{ item.collected_by }}</td>
+<td>{{ item.collection_date }}</td>
+<td>{{ item.transferred_to }}</td>
+<td>{{ item.transfer_date }}</td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+<h2>Evidence Appendix</h2>
+
+<table>
+
+<tr>
+<th>File</th>
+<th>Type</th>
+<th>Hash</th>
+<th>Metadata</th>
+</tr>
+
+{% for item in evidence_appendix %}
+
+<tr>
+<td>{{ item.file_name }}</td>
+<td>{{ item.file_type }}</td>
+<td>{{ item.hash_value }}</td>
+<td>
+
+{% for key,value in item.metadata.items() %}
+<strong>{{ key }}</strong>: {{ value }}<br>
+{% endfor %}
+
+</td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+</body>
+</html>
